@@ -1,5 +1,7 @@
+import Download from "./components/download"
+
 const Main = () => {
-    return <></>
+    return <Download />
 }
 
 export default Main
