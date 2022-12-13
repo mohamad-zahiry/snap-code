@@ -1,0 +1,204 @@
+/* @font-face { font-family: Ubuntu; src: url("assets/fonts/Ubuntu.ttf"); } */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('./assets/bg.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.font_ubuntu {
+    font-family: 'Ubuntu';
+    font-style: normal;
+}
+
+.title {
+    margin: 2rem 0 0.5rem 0;
+    width: 100%;
+    color: white;
+    font-weight: 600;
+    font-size: 70px;
+    text-transform: capitalize;
+    color: #FFCD05;
+    text-shadow: -4px 4px 20px #000000;
+    height: fit-content;
+}
+
+.description {
+    margin: 0;
+    font-size: 21px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    text-shadow: 2px 4px 9px rgba(0, 0, 0, 0.7);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 5em;
+    border-radius: 15px;
+    background-color: #323232;
+}
+
+.main_head {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    .main_head {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.dropdown {
+    min-width: 14em;
+    max-width: 14em;
+    position: relative;
+    margin: 1em;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    color: #FFCD05;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #FFCD05 solid;
+    border-radius: 10px;
+    padding: .4em 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background .3s;
+    transition: color .3s;
+}
+
+.select_clicked {
+    background-color: #FFCD05;
+    color: #323232;
+    box-shadow: 2 0 3px #aaa;
+}
+
+.select:hover {
+    background-color: #FFCD05;
+    color: #323232;
+    box-shadow: rgba(0, 0, 0, 0.7);
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px transparent solid;
+    border-right: 5px transparent solid;
+    border-top: 6px #FFCD05 solid;
+    transition: .3s;
+}
+
+.caret_rotate {
+    transform: rotate(180deg);
+}
+
+.select:hover .caret {
+    border-top: 6px #323232 solid;
+}
+
+.menu {
+    list-style: none;
+    margin: .5rem;
+    padding: .09em .1em;
+    background-color: #FFCD05;
+    border-radius: .7rem;
+    color: #fff;
+    width: 80%;
+    height: 300px;
+    /* hiding scroll bar */
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: absolute;
+    transform: translateX(10%);
+    opacity: 0;
+    display: none;
+    transition: display .3s;
+    transition: opacity .3s;
+    z-index: 1;
+}
+
+/* hiding scroll bar */
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menu li {
+    background-color: #323232;
+    padding: .3em .2em;
+    margin: .3em;
+    cursor: pointer;
+    border-radius: .5em;
+    font-size: .8em;
+}
+
+.main li:hover {
+    color: #FFCD05;
+    box-shadow: 1px 2px 5px #000;
+}
+
+.active {
+    background-color: blue;
+}
+
+.menu_open {
+    display: block;
+    opacity: 1;
+}
+
+.show_line_number {
+    color: white;
+}
+
+.code_string {
+    padding: 10px;
+    margin: 15px 15px;
+}
+
+.syntax_highlighter {
+    display: block;
+    text-align: left;
+    direction: ltr;
+    width: 90%;
+    margin: 15px auto;
+    max-width: max-content;
+}
+
+.download_button {
+    max-width: max-content;
+    background-color: transparent;
+    color: #FFCD05;
+    border: 2px #FFCD05 solid;
+    border-radius: 10px;
+    padding: .4em 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background .3s;
+    transition: color .3s;
+    margin: 1em auto;
+}
